@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Humbie Hunter — H5 Zombie Aim Trainer</title>
+  <meta name="google-adsense-account" content="ca-pub-3994443808889100">
+  <meta name="google-site-verification" content="8Btp8omtgokyAqyJ8nIqjnirxBxv4nc7f7jzDoiANDM" />
+  <meta name="description" content="Humbie Hunter is a fast-paced H5 zombie aim trainer. Level up, earn coins, and upgrade weapons — right in your browser." />
+  <meta name="theme-color" content="#0f3460" />
+
+  <!-- AdSense H5 Games Ads (beta) -->
+  <script async
+    data-ad-client="ca-pub-3994443808889100"
+    data-ad-frequency-hint="30s"
+    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js">
+  </script>
+
+  <meta property="og:title" content="Humbie Hunter" />
+  <meta property="og:description" content="Fast aim, level up, earn coins, and upgrade your weapons." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="assets/og.svg" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Humbie Hunter" />
+  <meta name="twitter:description" content="Fast aim, level up, earn coins, and upgrade your weapons." />
+  <meta name="twitter:image" content="assets/og.svg" />
+
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/icon.svg">
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="stylesheet" href="style.css">
+
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "VideoGame",
+      "name": "Humbie Hunter",
+      "applicationCategory": "Game",
+      "genre": ["Arcade", "Shooter"],
+      "operatingSystem": "Web",
+      "description": "A fast-paced H5 zombie aim trainer with levels, coins, and weapon upgrades.",
+      "inLanguage": "en"
+    }
+  </script>
+</head>
+<body>
+  <div class="container" id="game-root">
+    <header class="topbar" aria-label="Humbie Hunter">
+      <div class="brand">
+        <img class="site-logo" src="assets/icon.svg" alt="Humbie Hunter logo" />
+        <div class="brand-text">
+          <div class="brand-title">Humbie Hunter</div>
+          <div class="brand-subtitle">H5 zombie aim trainer</div>
+        </div>
+      </div>
+      <button type="button" class="shop-button" id="shop-btn" aria-haspopup="dialog" aria-controls="shop-modal">Shop</button>
+    </header>
+
+    <div class="container-game-info" aria-label="Game HUD">
+      <div class="container-bullets hud-item">
+        <h2 id="bullets">Bullets</h2>
+        <h2 id="bullets-num"></h2>
+      </div>
+
+      <div class="container-timer hud-item">
+        <h2 id="timer">Time</h2>
+        <h2 id="timer-num"></h2>
+      </div>
+
+      <div class="container-score hud-item">
+        <h2 id="score">Kills</h2>
+        <h2 id="score-num"></h2>
+      </div>
+
+      <div class="container-coins hud-item">
+        <h2 id="coins">Coins</h2>
+        <h2 id="coins-num"></h2>
+      </div>
+
+      <div class="container-level hud-item">
+        <h2 id="level">Level</h2>
+        <h2 id="level-num"></h2>
+      </div>
+
+      <div class="container-weapon hud-item">
+        <h2 id="weapon">Weapon</h2>
+        <h2 id="weapon-num"></h2>
+      </div>
+    </div>
+
+    <main class="game-stage" id="stage" aria-label="Game stage">
+      <button type="button" class="button" id="start-btn">Start</button>
+
+      <div class="start-timer" aria-live="polite">
+        <h1 id="start-timer"></h1>
+      </div>
+
+      <div class="game-rules" id="rules">
+        <h3>The undead are coming...</h3>
+        <p>Train your aim, survive the timer, and earn coins to upgrade your weapons. Each level gets faster — stay calm and keep your shots clean.</p>
+        <h3>Rules</h3>
+        <ul>
+          <li>Run out of bullets: game over.</li>
+          <li>Run out of time: game over.</li>
+          <li>Reach the kill goal to complete the level.</li>
+          <li>Earn coins on each kill, spend coins in the shop.</li>
+          <li>Mouse/touch to aim. Click/tap to shoot.</li>
+        </ul>
+      </div>
+
+      <div class="zombie" id="zombie" role="button" tabindex="0" aria-label="Zombie target"></div>
+
+      <div class="crosshair" id="crosshair" aria-hidden="true"></div>
+      <div class="impact impact-bullet" id="bulletHole" aria-hidden="true"></div>
+      <div class="impact impact-blood" id="bloodSpot" aria-hidden="true"></div>
+    </main>
+
+    <div class="overlay" id="overlay" hidden>
+      <div class="overlay-card" id="overlay-card" role="dialog" aria-modal="true">
+        <div id="overlay-content"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="shop-modal" id="shop-modal" role="dialog" aria-modal="true" aria-labelledby="shop-title">
+    <div class="shop-content">
+      <span class="close-shop" id="close-shop" aria-label="Close shop">&times;</span>
+      <h2 id="shop-title">Armory</h2>
+      <div class="shop-balance">Coins: <span id="shop-coins">0</span></div>
+      <div class="weapons-grid" id="weapons-grid"></div>
+    </div>
+  </div>
+
+  <script src="main.js"></script>
+ </body>
+
+ </html>

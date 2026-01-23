@@ -1,0 +1,17 @@
+{
+  "name": "Humbie Hunter",
+  "short_name": "Humbie",
+  "description": "A fast-paced zombie aim trainer H5 game with levels, coins, and weapon upgrades.",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#0a0a0a",
+  "theme_color": "#0f3460",
+  "icons": [
+    {
+      "src": "assets/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
